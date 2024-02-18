@@ -1,5 +1,17 @@
-#!/bin/bash
-# This script is used to build the project
-# It will create a build directory and run cmake to generate the makefile
-cp -r resources/assets/ compiles/assets
-zip -r compiles.zip compiles
+#!/usr/bin/env php
+<?php
+
+include_once "vendor/autoload.php";
+
+$appUrl = getVar('APP_URL');
+$files = glob('resources/views/*.blade.php');
+foreach ($files as $file) {
+	$filename = basename($file, '.blade.php');
+	echo "Generate page: $appUrl/?f=$filename\n";
+	$client = new GuzzleHttp\Client();
+	$client->request('GET', "$appUrl/?f=$filename&build");
+}
+
+exec('cp -r resources/assets compiles/assets');
+exec('zip -r compiles.zip compiles');
+echo "Build complete\n";

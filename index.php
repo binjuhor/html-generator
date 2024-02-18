@@ -5,7 +5,7 @@ use Binjuhor\Blade\BladeTemplate as Blade;
 
 $page = isset($_REQUEST['f']) ? $_REQUEST['f'] : 'index';
 $build = isset($_REQUEST['build']);
-$domain = 'http://html-generator.test';
+$domain = getVar('APP_URL');
 
 $blade = new Blade([
 	'view' => __DIR__ . '/resources/views',

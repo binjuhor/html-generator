@@ -9,10 +9,14 @@ Clone the repository to your local machine:
 git clone git@github.com:binjuhor/html-generator.git
 ```
 
-### Install Dependencies
+Run the following commands to quick install the dependencies and set up the project:
 ```bash
-composer install
-yarn install
+yarn setup
+```
+
+Put your local domain to the `.env` file:
+```env
+APP_URL=http://localhost:8000
 ```
 
 ### Compile Assets
@@ -28,13 +32,14 @@ yarn build
 ### Compile HTML Generator
 You just need to add `&build` to the URL to compile the HTML Generator. And the HTML files will be generated in the `compiles` directory.
 
-
 ### Export the HTML Generator
 ```bash
 yarn export
 ```
 
 Then in the root directory, you will find the `compiles.zip` file. Extract the file to your server and run the application.
+
+**Note**: Just need to run `yarn export` to compile the HTML Generator and export the `compiles.zip` file, no need to add `&build` to the URL to compile the HTML Generator.
 
 ## Usage
 
@@ -57,8 +62,11 @@ You can also use the `@include` directive to include partials in your templates.
 @endsection
 ```
 
-**Note**: You need to change `$domain` in `index.php` to your domain localhost or website URL.
+### To switch between different views
 
+You can use `f` request parameter to switch between different views. For example, if you have a view called `home.blade.php` and you want to switch to `about.blade.php`, you can do so by adding `?f=about` to the url.
+
+**Note**: You need to change `$domain` in `.env` to your domain localhost or website URL to avoid errors when generate HTML files.
 
 ## Goals
 
