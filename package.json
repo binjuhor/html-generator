@@ -1,0 +1,32 @@
+{
+  "name": "html-generator",
+  "version": "1.0.0",
+  "description": "HTML Generator utilizes the Laravel Blade template engine to help PHP developers quickly generate HTML for web application frontends. It leverages Blade's powerful features to speed up frontend development.",
+  "main": "index.php",
+  "scripts": {
+    "dev": "sass --watch --source-map resources/assets/scss/styles.scss resources/assets/css/styles.css",
+    "build": "sass --no-source-map  --style=compressed resources/assets/scss/styles.scss resources/assets/css/styles.css",
+    "export": "yarn build && ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binjuhor/html-generator.git"
+  },
+  "keywords": [
+    "html-generator",
+    "html",
+    "css",
+    "js",
+    "laravel",
+    "blade"
+  ],
+  "author": "binjuhor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binjuhor/html-generator/issues"
+  },
+  "homepage": "https://github.com/binjuhor/html-generator#readme",
+  "dependencies": {
+    "sass": "^1.71.0"
+  }
+}
