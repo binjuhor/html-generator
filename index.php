@@ -3,18 +3,15 @@ require_once "vendor/autoload.php";
 
 use Binjuhor\Blade\BladeTemplate as Blade;
 
-$compileDir = __DIR__ . '/compiles';
-$viewDirectory = __DIR__ . '/resources/views';
-$cacheDirectory = __DIR__ . '/cache';
-
 $page = isset($_REQUEST['f']) ? $_REQUEST['f'] : 'index';
-$build = isset($_REQUEST['build']) && $_REQUEST['build'];
+$build = isset($_REQUEST['build']);
+$domain = 'http://html-generator.test';
 
 $blade = new Blade([
-	'view' => $viewDirectory,
-	'cache' => $cacheDirectory,
-	'compileDir' => $compileDir,
-	'url' => 'http://html-generator.test'
+	'view' => __DIR__ . '/resources/views',
+	'cache' => __DIR__ . '/cache',
+	'compileDir' => __DIR__ . '/compiles',
+	'url' => $domain,
 ]);
 
 if (!file_exists('./resources/views/' . $page . '.blade.php')) {

@@ -25,6 +25,10 @@ yarn dev
 yarn build
 ```
 
+### Compile HTML Generator
+You just need to add `&build` to the URL to compile the HTML Generator. And the HTML files will be generated in the `compiles` directory.
+
+
 ### Export the HTML Generator
 ```bash
 yarn export
@@ -52,6 +56,9 @@ You can also use the `@include` directive to include partials in your templates.
     @include('partials._form')
 @endsection
 ```
+
+**Note**: You need to change `$domain` in `index.php` to your domain localhost or website URL.
+
 
 ## Goals
 

@@ -1,7 +1,6 @@
 {
     "require": {
-        "binjuhor/blade": "^1.0",
-        "guzzlehttp/guzzle": "^7.8"
+        "binjuhor/blade": "^1.0.4"
     },
     "autoload": {
         "files": ["helpers.php"]
