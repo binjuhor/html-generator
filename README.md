@@ -25,6 +25,13 @@ yarn dev
 yarn build
 ```
 
+### Export the HTML Generator
+```bash
+yarn export
+```
+
+Then in the root directory, you will find the `compiles.zip` file. Extract the file to your server and run the application.
+
 ## Usage
 
 Create new templates in the `resources/views/templates` directory. Use the `resources/views/layouts/app.blade.php` layout file to extend the layout for your templates.

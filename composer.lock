@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "binjuhor/blade",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/binjuhor/blade.git",
-                "reference": "e49c587511a02d4a42d9334e92903ba0930ca910"
+                "reference": "6cdee506cdff51f50898ceb9949d8c793d036c7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/binjuhor/blade/zipball/e49c587511a02d4a42d9334e92903ba0930ca910",
-                "reference": "e49c587511a02d4a42d9334e92903ba0930ca910",
+                "url": "https://api.github.com/repos/binjuhor/blade/zipball/6cdee506cdff51f50898ceb9949d8c793d036c7c",
+                "reference": "6cdee506cdff51f50898ceb9949d8c793d036c7c",
                 "shasum": ""
             },
             "require": {
@@ -44,9 +44,9 @@
             "description": "Laravel blade standalone for generate HTML CSS JS page",
             "support": {
                 "issues": "https://github.com/binjuhor/blade/issues",
-                "source": "https://github.com/binjuhor/blade/tree/v1.0.3"
+                "source": "https://github.com/binjuhor/blade/tree/v1.0.4"
             },
-            "time": "2024-02-18T16:59:14+00:00"
+            "time": "2024-02-18T17:12:23+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
