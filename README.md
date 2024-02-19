@@ -73,8 +73,8 @@ You can use `f` request parameter to switch between different views. For example
 - [x] Create a new template like Laravel blade
 - [ ] Use components in the template
 - [ ] Use slots in the template
-- [ ] Use directives in the template
-- [ ] Generate HTML from the template
+- [x] Use directives in the template
+- [x] Generate HTML from the template
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
