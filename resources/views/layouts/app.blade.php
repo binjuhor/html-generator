@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @stack('style')
     <link rel="stylesheet" href="{{ assets('css/styles.css') }}">
     <title>{{ isset($title) ? $title : 'New Document' }}</title>
 </head>
@@ -12,5 +13,6 @@
 <div>
    @yield('content')
 </div>
+@stack('script')
 </body>
 </html>
