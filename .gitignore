@@ -2,3 +2,4 @@ vendor/
 cache/
 compiles/
 *.zip
+.env
