@@ -32,6 +32,14 @@ yarn build
 ### Compile HTML Generator
 You just need to add `&build` to the URL to compile the HTML Generator. And the HTML files will be generated in the `compiles` directory.
 
+### Run the Application
+
+To run the application, use the following command:
+```bash
+yarn serve
+```
+**Note:** tested on MacOS and Ubuntu.
+
 ### Export the HTML Generator
 ```bash
 yarn export
