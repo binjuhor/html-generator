@@ -1,5 +1,5 @@
 <?php
-function assets($file, $show = true)
+function asset($file, $show = true)
 {
 	$file_url = "resources/assets/{$file}";
 	if (!$show) {
