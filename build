@@ -9,7 +9,12 @@ foreach ($files as $file) {
 	$filename = basename($file, '.blade.php');
 	echo "Generate page: $appUrl/?f=$filename\n";
 	$client = new GuzzleHttp\Client();
-	$client->request('GET', "$appUrl/?f=$filename&build");
+
+	try {
+		$client->request('GET', "$appUrl/?f=$filename&build");
+	} catch (GuzzleException $e) {
+        echo "Error: " . $e->getMessage() . "\n";
+	}
 }
 
 exec('cp -r resources/assets compiles/assets');
