@@ -3,6 +3,8 @@
 
 include_once "vendor/autoload.php";
 
+use GuzzleHttp\Exception\GuzzleException;
+
 $appUrl = getVar('APP_URL');
 $files = glob('resources/views/*.blade.php');
 foreach ($files as $file) {
