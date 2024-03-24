@@ -20,3 +20,12 @@ function getVar($key, $default = null)
 	}
 	return $default;
 }
+
+
+function url($part = '')
+{
+	if($part !== '') {
+		return getVar('APP_URL').'/?f='.$part;
+	}
+	return getVar('APP_URL');
+}
