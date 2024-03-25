@@ -9,6 +9,10 @@ $appUrl = getVar('APP_URL', '');
 $prodUrl = getVar('PRODUCT_URL', $appUrl);
 $files = glob('resources/views/*.blade.php');
 
+if (file_exists('compiles/routes.txt')) {
+	unlink('compiles/routes.txt');
+}
+
 foreach ($files as $file) {
 	$filename = basename($file, '.blade.php');
 	echo "Generate page: {$appUrl}/{$filename}.html\n";
