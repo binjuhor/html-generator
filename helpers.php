@@ -23,6 +23,10 @@ function getVar($key, $default = null)
 
 function getPage()
 {
+	$env = getVar('ENV', 'development');
+	if($env === 'development') { return isset($_REQUEST['f']) ? $_REQUEST['f'] : 'index'; }
+	if(isset($_REQUEST['f'])) { return $_REQUEST['f'] === '' ? 'index' : $_REQUEST['f'];}
+	
 	$file = basename($_SERVER['REQUEST_URI']);
 	$page = pathinfo($file, PATHINFO_FILENAME);
 	return $page === '' ? 'index' : $page;
@@ -30,16 +34,13 @@ function getPage()
 
 function url($part = '')
 {
+	$env = getVar('ENV', 'development');
+	if($env === 'development' && ($part === 'index' || $part === '')) { return getVar('APP_URL'); }
+	if($env === 'development') { return getVar('APP_URL').'/?f='.$part; }
 	return $part !== '' ? $part.'.html' : 'index.html';
 }
 
 function active($part = '')
 {
-	$page = getPage();
-	
-	if ($page === $part) {
-		return 'active';
-	}
-	
-	return  '';
+	return getPage() === $part ? 'active' : '';
 }
