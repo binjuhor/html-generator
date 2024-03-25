@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 
 $appUrl = getVar('APP_URL', '');
 $prodUrl = getVar('PRODUCT_URL', $appUrl);
+$appEnv = getVar('ENV', 'development');
 $files = glob('resources/views/*.blade.php');
 
 if (file_exists('compiles/routes.txt')) {
@@ -19,9 +20,14 @@ foreach ($files as $file) {
 	$client = new GuzzleHttp\Client();
 	
 	try {
-		$client->request('GET', "{$appUrl}/{$filename}.html?build");
+        if ($appEnv === 'development') {
+            $client->request('GET', "{$appUrl}/?f={$filename}&build");
+        } else {
+		    $client->request('GET', "{$appUrl}/{$filename}.html?build");
+        }
+        
 		$file = fopen("compiles/routes.txt", "a");
-		fwrite($file, "{$prodUrl}/{$filename}.html\n");
+        fwrite($file, "{$prodUrl}/{$filename}.html\n");
 		fclose($file);
 	} catch (GuzzleException $e) {
 		echo "Error: " . $e->getMessage() . "\n";
