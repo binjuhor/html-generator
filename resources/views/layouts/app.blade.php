@@ -10,10 +10,12 @@
     <title>{{ isset($title) ? $title : 'New Document' }}</title>
 </head>
 <body>
-<div>
-   @yield('content')
-</div>
-@stack('script')
-<script src="{{ asset('js/common.js') }}"></script>
+    <main>
+        <div>
+           @yield('content')
+        </div>
+    </main>
+    @stack('script')
+    <script src="{{ asset('js/common.js') }}"></script>
 </body>
 </html>
