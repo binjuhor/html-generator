@@ -29,3 +29,13 @@ function url($part = '')
 	}
 	return getVar('APP_URL');
 }
+
+function setActive($part = '')
+{
+	$page = $_REQUEST['f'];
+	if ($page === $part) {
+		return 'active';
+	}
+	
+	return  '';
+}
