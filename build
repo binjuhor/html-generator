@@ -5,17 +5,19 @@ include_once "vendor/autoload.php";
 
 use GuzzleHttp\Exception\GuzzleException;
 
-$appUrl = getVar('APP_URL');
+$appUrl = getVar('APP_URL', '');
+$prodUrl = getVar('PRODUCT_URL', $appUrl);
 $files = glob('resources/views/*.blade.php');
+
 foreach ($files as $file) {
 	$filename = basename($file, '.blade.php');
-	echo "Generate page: $appUrl/$filename.html\n";
+	echo "Generate page: {$appUrl}/{$filename}.html\n";
 	$client = new GuzzleHttp\Client();
 	
 	try {
-		$client->request('GET', "$appUrl/$filename.html?build");
+		$client->request('GET', "{$appUrl}/{$filename}.html?build");
 		$file = fopen("compiles/routes.txt", "a");
-		fwrite($file, "$appUrl/$filename.html\n");
+		fwrite($file, "{$prodUrl}/{$filename}.html\n");
 		fclose($file);
 	} catch (GuzzleException $e) {
 		echo "Error: " . $e->getMessage() . "\n";
