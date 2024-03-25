@@ -21,18 +21,22 @@ function getVar($key, $default = null)
 	return $default;
 }
 
+function getPage()
+{
+	$file = basename($_SERVER['REQUEST_URI']);
+	$page = pathinfo($file, PATHINFO_FILENAME);
+	return $page === '' ? 'index' : $page;
+}
 
 function url($part = '')
 {
-	if($part !== '') {
-		return getVar('APP_URL').'/?f='.$part;
-	}
-	return getVar('APP_URL');
+	return $part !== '' ? $part.'.html' : 'index.html';
 }
 
-function setActive($part = '')
+function active($part = '')
 {
-	$page = $_REQUEST['f'];
+	$page = getPage();
+	
 	if ($page === $part) {
 		return 'active';
 	}

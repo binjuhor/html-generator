@@ -9,13 +9,13 @@ $appUrl = getVar('APP_URL');
 $files = glob('resources/views/*.blade.php');
 foreach ($files as $file) {
 	$filename = basename($file, '.blade.php');
-	echo "Generate page: $appUrl/?f=$filename\n";
+	echo "Generate page: $appUrl/$filename.html\n";
 	$client = new GuzzleHttp\Client();
-
+	
 	try {
-		$client->request('GET', "$appUrl/?f=$filename&build");
+		$client->request('GET', "$appUrl/$filename.html?build");
 	} catch (GuzzleException $e) {
-        echo "Error: " . $e->getMessage() . "\n";
+		echo "Error: " . $e->getMessage() . "\n";
 	}
 }
 

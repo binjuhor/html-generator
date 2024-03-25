@@ -3,7 +3,7 @@ require_once "vendor/autoload.php";
 
 use Binjuhor\Blade\BladeTemplate as Blade;
 
-$page = isset($_REQUEST['f']) ? $_REQUEST['f'] : 'index';
+$page = getPage();
 $build = isset($_REQUEST['build']);
 $domain = getVar('APP_URL');
 
