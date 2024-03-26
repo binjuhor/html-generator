@@ -20,12 +20,7 @@ foreach ($files as $file) {
 	$client = new GuzzleHttp\Client();
 	
 	try {
-        if ($appEnv === 'development') {
-            $client->request('GET', "{$appUrl}/?f={$filename}&build");
-        } else {
-		    $client->request('GET', "{$appUrl}/{$filename}.html?build");
-        }
-        
+        $client->request('GET', "{$appUrl}/?f={$filename}&build");
 		$file = fopen("compiles/routes.txt", "a");
         fwrite($file, "{$prodUrl}/{$filename}.html\n");
 		fclose($file);
