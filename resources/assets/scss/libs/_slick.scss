@@ -117,3 +117,69 @@
 .slick-arrow.slick-hidden {
   display: none;
 }
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  color: transparent;
+  width: 32px;
+  height: 92px;
+  min-width: initial;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  transition: all .3s;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: 7px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    color: transparent;
+  }
+
+  &.slick-prev {
+    left: 0;
+
+    &::before {
+      transform: rotate(-45deg);
+      top: calc(50% - 2px);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      top: calc(50% + 2px);
+    }
+  }
+
+  &.slick-next {
+    right: 0;
+
+    &::before {
+      transform: rotate(45deg);
+      top: calc(50% - 2px);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: calc(50% + 2px);
+    }
+  }
+}
