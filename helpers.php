@@ -32,7 +32,7 @@ function getPage()
 	return $page === '' ? 'index' : $page;
 }
 
-function url($part = '')
+function route($part = '')
 {
 	$env = getVar('ENV', 'development');
 	if($env === 'development' && ($part === 'index' || $part === '')) { return getVar('APP_URL'); }
