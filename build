@@ -11,7 +11,7 @@ $appEnv = getVar('ENV', 'development');
 $files = glob('resources/views/*.blade.php');
 
 if (file_exists('compiles/routes.txt')) {
-	unlink('compiles/routes.txt');
+    exec('rm -rf compiles/*');
 }
 
 foreach ($files as $file) {
