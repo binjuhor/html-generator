@@ -33,4 +33,5 @@ foreach ($files as $file) {
 
 exec('cp -r resources/assets compiles/assets');
 exec('rm -rf compiles/404.html');
+exec('find compiles -name .gitkeep -exec rm -f {} \;');
 echo "Build complete\n";
