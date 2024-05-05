@@ -5,7 +5,7 @@
   "main": "index.php",
   "scripts": {
     "dev": "sass --watch --source-map resources/assets/scss/styles.scss resources/assets/css/styles.css",
-    "build": "sass --no-source-map  --style=compressed resources/assets/scss/styles.scss resources/assets/css/styles.css",
+    "build": "sass --no-source-map  resources/assets/scss/styles.scss resources/assets/css/styles.css",
     "export": "yarn build && ./build",
     "setup": "yarn install && composer install && cp .env.example .env",
     "serve": "php -S localhost:8080 -t . && open http://localhost:8080"
