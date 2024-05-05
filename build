@@ -30,5 +30,5 @@ foreach ($files as $file) {
 }
 
 exec('cp -r resources/assets compiles/assets');
-exec('zip -r compiles.zip compiles');
+exec('rm -rf compiles/404.html');
 echo "Build complete\n";
